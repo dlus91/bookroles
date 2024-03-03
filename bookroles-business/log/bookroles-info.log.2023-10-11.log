@@ -1,0 +1,11 @@
+2023-10-11 12:25:21.765 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - ===ServletContext初始化===
+2023-10-11 12:25:25.733 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - 初始化 BOOK_CLICK_TOTAL 成功
+2023-10-11 12:25:25.734 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - 初始化 BOOK_DOWNLOAD_TOTAL 成功
+2023-10-11 12:25:25.770 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - book html record索引设置成功
+2023-10-11 12:25:25.812 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - book 索引设置成功
+2023-10-11 12:25:25.813 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - book download_url索引设置成功
+2023-10-11 12:25:25.976 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - book keywords本表增量索引设置成功
+2023-10-11 12:25:25.979 [RMI TCP Connection(2)-127.0.0.1] INFO  com.bookroles.FirstListener - =========初始化成功，耗时:4209ms==========
+2023-10-11 19:03:13.844 [main] INFO  com.bookroles.FirstListener - ===book_click_total数据重新记录完成===
+2023-10-11 19:03:13.846 [main] INFO  com.bookroles.FirstListener - ===book_download_total数据重新记录完成===
+2023-10-11 19:03:13.846 [main] INFO  com.bookroles.FirstListener - ===servletContext销毁===

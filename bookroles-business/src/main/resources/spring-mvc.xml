@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    ">
+
+	<!-- 引入配置文件 -->
+<!--	<context:property-placeholder location="classpath:config/config.properties" />-->
+
+	<!-- 配置数据源 -->
+<!--	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+		<property name="driver" value="${jdbc.driver}" />
+		<property name="driverUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="minimumConnectionCount" value="${jdbc.minConnection}" />
+		<property name="maximumConnectionCount" value="${jdbc.maxConnection}" />
+		<property name="maximumConnectionLifetime" value="${jdbc.maxConnectionLife}" />
+		<property name="maximumActiveTime" value="${jdbc.maxActiveTime}" />
+		<property name="prototypeCount" value="${jdbc.prototypeCount}" />
+		<property name="houseKeepingTestSql" value="${jdbc.testSql}" />
+	</bean>-->
+
+<!--	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	  	<property name="dataSource" ref="dataSource"/>
+	</bean>-->
+	
+		<!-- 配置事务管理器 -->
+<!--  	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>-->
+
+	<!-- 注解方式配置事物 -->
+<!--	<tx:annotation-driven transaction-manager="transactionManager" />-->
+
+	<!-- 扫描所有spring bean注解 -->
+	<context:component-scan base-package="com.bookroles" />
+
+	<!-- 配置mvc注解扫描 -->
+	<mvc:annotation-driven/>
+	<!-- 动态代理 -->
+	<!-- <aop:aspectj-autoproxy /> -->
+	
+	<!-- spring view过滤 -->
+	<bean id="pageResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+
+<!--  	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/*/*.jsp" />
+			<mvc:exclude-mapping path="/user/login.do" />
+			<bean class="com.bookroles.configurer.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>-->
+
+</beans>

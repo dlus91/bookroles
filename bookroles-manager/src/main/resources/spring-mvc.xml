@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    ">
+
+	<import resource="mybatis/spring-mybatis.xml"/>
+
+	<!-- 扫描所有spring bean注解 -->
+	<context:component-scan base-package="com.bookroles" />
+
+
+
+	<!-- 配置mvc注解扫描 -->
+	<mvc:annotation-driven validator="validator" />
+
+	<bean id="validator"
+		  class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="providerClass"  value="org.hibernate.validator.HibernateValidator"/>
+		<!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+		<!--<property name="validationMessageSource" ref="messageSource"/>-->
+	</bean>
+
+	<!-- 动态代理 -->
+	<!-- <aop:aspectj-autoproxy /> -->
+
+	<bean id="viewResolver"
+		  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!--可以省略-->
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<!--前缀-->
+		<property name="prefix" value="/WebContent/"/>
+		<!--注意路径-->
+		<!--后缀-->
+		<property name="suffix" value=".jsp"/>
+	</bean>
+
+	<mvc:resources mapping="/static/**" location="static/" />
+	<mvc:resources mapping="/*.jsp" location="WebContent/" />
+
+  	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**/*.jsp" />
+			<mvc:exclude-mapping path="/static/favicon.ico"/>
+			<mvc:exclude-mapping path="/static/js/app.js"/>
+			<mvc:exclude-mapping path="/static/css/app.css"/>
+			<mvc:exclude-mapping path="/static/fonts/*"/>
+			<mvc:exclude-mapping path="/static/picture/*.png"/>
+			<mvc:exclude-mapping path="/static/image/cs3.gif"/>
+			<mvc:exclude-mapping path="/static/image/icon-circles.png"/>
+			<mvc:exclude-mapping path="/static/image/sprite-skin-flat.png"/>
+			<bean class="com.bookroles.configurer.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+</beans>

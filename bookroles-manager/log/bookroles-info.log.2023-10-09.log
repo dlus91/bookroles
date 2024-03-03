@@ -1,0 +1,380 @@
+2023-10-09 10:01:47.072 [RMI TCP Connection(4)-127.0.0.1] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-10-09 10:01:47.082 [RMI TCP Connection(4)-127.0.0.1] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'bookMapper' and 'com.bookroles.mapper.BookMapper' mapperInterface
+2023-10-09 10:01:47.090 [RMI TCP Connection(4)-127.0.0.1] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'dictionaryMapper' and 'com.bookroles.mapper.DictionaryMapper' mapperInterface
+2023-10-09 10:01:48.811 [RMI TCP Connection(4)-127.0.0.1] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis/mybatis.xml]'
+2023-10-09 10:01:49.112 [RMI TCP Connection(4)-127.0.0.1] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [H:\programmer\Interviewspace\bookroles\bookroles-manager\target\bookroles-manager-1.0-SNAPSHOT\WEB-INF\classes\mapper\BookMapper.xml]'
+2023-10-09 10:01:49.142 [RMI TCP Connection(4)-127.0.0.1] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [H:\programmer\Interviewspace\bookroles\bookroles-manager\target\bookroles-manager-1.0-SNAPSHOT\WEB-INF\classes\mapper\DictionaryMapper.xml]'
+2023-10-09 10:01:51.232 [RMI TCP Connection(4)-127.0.0.1] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+2023-10-09 10:01:51.238 [RMI TCP Connection(4)-127.0.0.1] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2023-10-09 10:01:51.337 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+2023-10-09 10:01:51.339 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2023-10-09 10:01:51.341 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.engine.AbstractConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2023-10-09 10:01:51.343 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type jdk.proxy3.$Proxy38
+2023-10-09 10:01:51.358 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2023-10-09 10:01:51.363 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+2023-10-09 10:01:51.367 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+2023-10-09 10:01:51.367 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2023-10-09 10:01:51.367 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+2023-10-09 10:01:51.385 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.i.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2023-10-09 10:01:52.020 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2023-10-09 10:01:52.054 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2023-10-09 10:01:52.054 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2023-10-09 10:01:52.055 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2023-10-09 10:01:52.055 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2023-10-09 10:01:52.055 [RMI TCP Connection(4)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2023-10-09 10:02:00.645 [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2023-10-09 10:02:00.662 [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58297a08] was not registered for synchronization because synchronization is not active
+2023-10-09 10:02:01.455 [http-nio-8080-exec-5] DEBUG druid.sql.Connection - {conn-10001,procId-2} connected
+2023-10-09 10:02:01.460 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10001, stmt-20000} created
+2023-10-09 10:02:01.876 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10001, stmt-20000, rs-50000} query executed. 6.6622 millis. SELECT 1
+2023-10-09 10:02:01.876 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} open
+2023-10-09 10:02:01.880 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} Header: [1]
+2023-10-09 10:02:01.880 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10001, stmt-20000, rs-50000} closed
+2023-10-09 10:02:01.880 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10001, stmt-20000} closed
+2023-10-09 10:02:01.886 [http-nio-8080-exec-5] DEBUG druid.sql.Connection - {conn-10002,procId-3} connected
+2023-10-09 10:02:01.887 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10002, stmt-20001} created
+2023-10-09 10:02:01.887 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10002, stmt-20001, rs-50001} query executed. 0.3233 millis. SELECT 1
+2023-10-09 10:02:01.887 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10002, stmt-20001, rs-50001} open
+2023-10-09 10:02:01.887 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10002, stmt-20001, rs-50001} Header: [1]
+2023-10-09 10:02:01.887 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10002, stmt-20001, rs-50001} closed
+2023-10-09 10:02:01.888 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10002, stmt-20001} closed
+2023-10-09 10:02:01.892 [http-nio-8080-exec-5] DEBUG druid.sql.Connection - {conn-10003,procId-4} connected
+2023-10-09 10:02:01.893 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, stmt-20002} created
+2023-10-09 10:02:01.893 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, stmt-20002, rs-50002} query executed. 0.3478 millis. SELECT 1
+2023-10-09 10:02:01.893 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, stmt-20002, rs-50002} open
+2023-10-09 10:02:01.894 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, stmt-20002, rs-50002} Header: [1]
+2023-10-09 10:02:01.894 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, stmt-20002, rs-50002} closed
+2023-10-09 10:02:01.894 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, stmt-20002} closed
+2023-10-09 10:02:01.908 [http-nio-8080-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-10-09 10:02:01.917 [http-nio-8080-exec-5] DEBUG druid.sql.Connection - {conn-10003} pool-connect
+2023-10-09 10:02:01.918 [http-nio-8080-exec-5] DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [ConnectionProxyImpl{connectedTime=2023-10-09 10:02:01.892, closeCount=0, lastValidateTimeMillis=2023-10-09 10:02:01.894}] will not be managed by Spring
+2023-10-09 10:02:01.926 [http-nio-8080-exec-5] DEBUG com.bookroles.mapper.DictionaryMapper.query - ==>  Preparing: select id,name,type from t_dictionary
+2023-10-09 10:02:01.976 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, pstmt-20003} created. select id,name,type from t_dictionary
+2023-10-09 10:02:01.996 [http-nio-8080-exec-5] DEBUG com.bookroles.mapper.DictionaryMapper.query - ==> Parameters: 
+2023-10-09 10:02:01.996 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, pstmt-20003} Parameters : []
+2023-10-09 10:02:01.997 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, pstmt-20003} Types : []
+2023-10-09 10:02:02.053 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, pstmt-20003} executed. 56.1359 millis. select id,name,type from t_dictionary
+2023-10-09 10:02:02.053 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} open
+2023-10-09 10:02:02.053 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Header: [id, name, type]
+2023-10-09 10:02:02.078 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [10, 历史, ARCHIVE_TYPE]
+2023-10-09 10:02:02.091 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [11, 影响力, ARCHIVE_TYPE]
+2023-10-09 10:02:02.092 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [9, 心理学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.092 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [12, 成功学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.093 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [3, 硬件, ARCHIVE_TYPE]
+2023-10-09 10:02:02.094 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [8, 社会科学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.094 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [6, 管理学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.095 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [4, 经济学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.096 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [14, 职场进阶, ARCHIVE_TYPE]
+2023-10-09 10:02:02.097 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [5, 行为经济学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.098 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [1, 计算机, ARCHIVE_TYPE]
+2023-10-09 10:02:02.098 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [13, 认知科学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.099 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [2, 软件, ARCHIVE_TYPE]
+2023-10-09 10:02:02.099 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [7, 金融学, ARCHIVE_TYPE]
+2023-10-09 10:02:02.100 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [1, EPUB, DOWNLOAD_FORMAT]
+2023-10-09 10:02:02.101 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [2, AZW3, DOWNLOAD_FORMAT]
+2023-10-09 10:02:02.103 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [3, MOBI, DOWNLOAD_FORMAT]
+2023-10-09 10:02:02.103 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [4, EPUB/AZW3, DOWNLOAD_FORMAT]
+2023-10-09 10:02:02.104 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [5, EPUB/MOBI, DOWNLOAD_FORMAT]
+2023-10-09 10:02:02.105 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [6, AZW3/MOBI, DOWNLOAD_FORMAT]
+2023-10-09 10:02:02.105 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [7, EPUB/AZW3/MOBI, DOWNLOAD_FORMAT]
+2023-10-09 10:02:02.106 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [8, ARCHIVE_TYPE, DICTIONARY]
+2023-10-09 10:02:02.107 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [9, AUTHOR, DICTIONARY]
+2023-10-09 10:02:02.107 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [10, PUBLISH_HOUSE, DICTIONARY]
+2023-10-09 10:02:02.108 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [11, DOWNLOADFORMAT, DICTIONARY]
+2023-10-09 10:02:02.109 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} Result: [12, DICTIONARY, DICTIONARY]
+2023-10-09 10:02:02.109 [http-nio-8080-exec-5] DEBUG com.bookroles.mapper.DictionaryMapper.query - <==      Total: 26
+2023-10-09 10:02:02.110 [http-nio-8080-exec-5] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20003, rs-50003} closed
+2023-10-09 10:02:02.111 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, pstmt-20003} clearParameters. 
+2023-10-09 10:02:02.112 [http-nio-8080-exec-5] DEBUG druid.sql.Statement - {conn-10003, stmt-20003} clearBatch. 
+2023-10-09 10:02:02.113 [http-nio-8080-exec-5] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20003} enter cache
+2023-10-09 10:02:02.114 [http-nio-8080-exec-5] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58297a08]
+2023-10-09 10:02:02.117 [http-nio-8080-exec-5] DEBUG druid.sql.Connection - {conn-10003} pool-recycle
+2023-10-09 10:02:02.118 [http-nio-8080-exec-5] INFO  com.bookroles.service.model.Dictionary - =====初始化字典表成功=====
+2023-10-09 10:02:04.222 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@4652218c, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@14aa69ad, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.224 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@407077b4, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@7d08916, value=1000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.226 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$SelectOne], attributes={groups=[Ljava.lang.Class;@74e43587, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@340a6f23, value=1}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.227 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$SelectOne], attributes={groups=[Ljava.lang.Class;@47a92de8, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@6a26a643, value=1000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.293 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@29ae9c86, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@287aa0c, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.294 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@76a6601b, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@39d2ff57, value=1893456000000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.295 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@64450e47, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@5bad1f09, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.295 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@1e4e0adf, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@30486606, value=1893456000000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.308 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@3c10f40e, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@65469dd4, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.309 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@13ac6c34, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@1164be49, value=1893456000000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.309 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@2a6f88ef, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@7b96084b, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.310 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@bab16c1, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@3f09770b, value=1893456000000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.310 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@69f7a8f5, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@226831d0, value=1577836800000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.311 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@71262642, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@5e3a642, value=1893456000000}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.312 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@5107060b, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@32024b4a, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.313 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@72d66f7e, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@6a9f16d0, value=15}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.313 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@34172d6, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@233921ef, value=1}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.313 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@62d50769, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@706ea475, value=15}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.314 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@7831bf6c, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@126dcfdc, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.315 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@58c97cb7, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@5d8126d7, value=2}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.315 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@283e28d4, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@54d10120, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.315 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@476ee3c9, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@130dd26d, value=1}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.316 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@4a2c2050, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@1628f034, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.316 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@26e83993, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@5b0b1999, value=300}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.317 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@700e9c08, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@21766b6d, value=1}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.317 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@4635fa71, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@45f1f4ff, value=300}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.318 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@3aab66bf, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@70b72b19, value=0}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.318 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Select], attributes={groups=[Ljava.lang.Class;@6f47acec, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@1bd1fbf4, value=300}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.319 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Min, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@61fa1141, message={javax.validation.constraints.Min.message}, payload=[Ljava.lang.Class;@756048d1, value=1}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.319 [http-nio-8080-exec-9] DEBUG o.h.v.i.m.descriptor.ConstraintDescriptorImpl - Adding composing constraint: ConstraintDescriptorImpl{annotation=j.v.c.Max, payloads=[], hasComposingConstraints=true, isReportAsSingleInvalidConstraint=false, constraintLocationKind=FIELD, definedOn=DEFINED_LOCALLY, groups=[interface com.bookroles.controller.valid.Group$Update, interface com.bookroles.controller.valid.Group$Add], attributes={groups=[Ljava.lang.Class;@3de37175, message={javax.validation.constraints.Max.message}, payload=[Ljava.lang.Class;@4a3290d8, value=300}, constraintType=GENERIC, valueUnwrapping=DEFAULT}.
+2023-10-09 10:02:04.776 [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2023-10-09 10:02:04.776 [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5410ca8e] was not registered for synchronization because synchronization is not active
+2023-10-09 10:02:04.854 [http-nio-8080-exec-9] DEBUG druid.sql.Connection - {conn-10003} pool-connect
+2023-10-09 10:02:04.855 [http-nio-8080-exec-9] DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [ConnectionProxyImpl{connectedTime=2023-10-09 10:02:01.892, closeCount=0, lastValidateTimeMillis=2023-10-09 10:02:01.894}] will not be managed by Spring
+2023-10-09 10:02:04.855 [http-nio-8080-exec-9] DEBUG com.bookroles.mapper.BookMapper.queryPage - ==>  Preparing: select id,name,image, score,download_format,publish_month, key_word,archive_type_id, open,download_url_id,intro_id, GROUP_CONCAT(DISTINCT CONCAT(author_id,':',author_name)) as authors, GROUP_CONCAT(DISTINCT CONCAT(publish_house_id,':',publish_house_name)) as publish_houses, create_time as upload_time, update_time as last_time from t_book where 1=1 group by id
+2023-10-09 10:02:04.948 [http-nio-8080-exec-9] DEBUG druid.sql.Statement - {conn-10003, pstmt-20004} created. select  
+        id,name,image,
+        score,download_format,publish_month,
+        key_word,archive_type_id,
+        open,download_url_id,intro_id,
+        GROUP_CONCAT(DISTINCT CONCAT(author_id,':',author_name)) as authors,
+        GROUP_CONCAT(DISTINCT CONCAT(publish_house_id,':',publish_house_name)) as publish_houses,
+        create_time as upload_time,
+        update_time as last_time
+     
+        from t_book
+        where 1=1
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        group by id
+2023-10-09 10:02:04.948 [http-nio-8080-exec-9] DEBUG com.bookroles.mapper.BookMapper.queryPage - ==> Parameters: 
+2023-10-09 10:02:04.948 [http-nio-8080-exec-9] DEBUG druid.sql.Statement - {conn-10003, pstmt-20004} Parameters : []
+2023-10-09 10:02:04.948 [http-nio-8080-exec-9] DEBUG druid.sql.Statement - {conn-10003, pstmt-20004} Types : []
+2023-10-09 10:02:05.003 [http-nio-8080-exec-9] DEBUG druid.sql.Statement - {conn-10003, pstmt-20004} executed. 54.939 millis. select  
+        id,name,image,
+        score,download_format,publish_month,
+        key_word,archive_type_id,
+        open,download_url_id,intro_id,
+        GROUP_CONCAT(DISTINCT CONCAT(author_id,':',author_name)) as authors,
+        GROUP_CONCAT(DISTINCT CONCAT(publish_house_id,':',publish_house_name)) as publish_houses,
+        create_time as upload_time,
+        update_time as last_time
+     
+        from t_book
+        where 1=1
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        group by id
+2023-10-09 10:02:05.004 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} open
+2023-10-09 10:02:05.004 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Header: [id, name, image, score, download_format, publish_month, key_word, archive_type_id, open, download_url_id, intro_id, authors, publish_houses, create_time, update_time]
+2023-10-09 10:02:05.004 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Result: [1, 技术陷阱, 1693380712834.jpg, 4.0, AZW3/MOBI, 2019/08, 技术, 12, 1, 2, 8, 1:弗雷?卡尔, 1:中信出版社, 2023-09-27 14:48:27.0, 2023-10-07 19:47:49.0]
+2023-10-09 10:02:05.007 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Result: [2, 价值共生, 1693382935689.jpg, 3.5, EPUB/MOBI, 2022/08, 价值, 2, 1, 2, 2, 2:陈春花, 2:人民邮电出版社, 2023-09-27 14:48:31.0, 2023-10-07 19:47:41.0]
+2023-10-09 10:02:05.009 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Result: [3, 持续成长, 1693381712215.jpg, 4.0, EPUB, 2023/01, 成长, 1, 1, 3, 3, 3:李尚龙, 1:中信出版社,3:中国人民大学出版社, 2023-09-27 14:48:33.0, 2023-10-07 19:32:05.0]
+2023-10-09 10:02:05.009 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Result: [4, 情绪词典, 1693383144955.jpg, 3.0, EPUB/AWZ3/MOBI, 2020/04, 情绪 词典, 10, 1, 4, 4, 4:朱建军,5:曹昱, 3:中国人民大学出版社, 2023-09-27 14:53:30.0, 2023-10-07 19:46:08.0]
+2023-10-09 10:02:05.010 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Result: [5, 技术陷阱20, 1693380712834.jpg, 4.0, EPUB/AWZ3, 1999/02, 陷阱, 10, 0, 1, 10, null, null, 2023-10-03 11:23:29.0, 2023-10-07 19:47:36.0]
+2023-10-09 10:02:05.012 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Result: [8, 技术陷阱50, 1693380712834.jpg, 4.0, MOBI, 2009/02, 工业革命, 6, 0, 200, 199, null, null, 2023-10-05 01:08:22.0, 2023-10-05 17:24:28.0]
+2023-10-09 10:02:05.013 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} Result: [9, 技术陷阱60, 1693380712834.jpg, 4.0, MOBI, 2009/02, 工业革命, 6, 1, 200, 199, null, null, 2023-10-05 01:08:22.0, 2023-10-05 17:25:10.0]
+2023-10-09 10:02:05.013 [http-nio-8080-exec-9] DEBUG com.bookroles.mapper.BookMapper.queryPage - <==      Total: 7
+2023-10-09 10:02:05.014 [http-nio-8080-exec-9] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20004, rs-50004} closed
+2023-10-09 10:02:05.014 [http-nio-8080-exec-9] DEBUG druid.sql.Statement - {conn-10003, pstmt-20004} clearParameters. 
+2023-10-09 10:02:05.014 [http-nio-8080-exec-9] DEBUG druid.sql.Statement - {conn-10003, stmt-20004} clearBatch. 
+2023-10-09 10:02:05.014 [http-nio-8080-exec-9] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20004} enter cache
+2023-10-09 10:02:05.014 [http-nio-8080-exec-9] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5410ca8e]
+2023-10-09 10:02:05.014 [http-nio-8080-exec-9] DEBUG druid.sql.Connection - {conn-10003} pool-recycle
+2023-10-09 10:02:08.598 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2023-10-09 10:02:08.598 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40822940] was not registered for synchronization because synchronization is not active
+2023-10-09 10:02:08.598 [http-nio-8080-exec-7] DEBUG druid.sql.Connection - {conn-10003} pool-connect
+2023-10-09 10:02:08.598 [http-nio-8080-exec-7] DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [ConnectionProxyImpl{connectedTime=2023-10-09 10:02:01.892, closeCount=0, lastValidateTimeMillis=2023-10-09 10:02:01.894}] will not be managed by Spring
+2023-10-09 10:02:08.598 [http-nio-8080-exec-7] DEBUG com.bookroles.mapper.BookMapper.queryDetail - ==>  Preparing: select id,name,image, score,download_format,publish_month, key_word,archive_type_id, open, download_url_id,download_url, intro_id,intro, authors,publish_houses, create_time as upload_time, update_time as last_time from t_book_detail where id = ? group by id
+2023-10-09 10:02:08.643 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20005} created. select  
+        id,name,image,
+        score,download_format,publish_month,
+        key_word,archive_type_id,
+        open,
+        download_url_id,download_url,
+        intro_id,intro,
+        authors,publish_houses,
+        create_time as upload_time,
+        update_time as last_time
+     
+        from t_book_detail
+        where id = ?
+        group by id
+2023-10-09 10:02:08.647 [http-nio-8080-exec-7] DEBUG com.bookroles.mapper.BookMapper.queryDetail - ==> Parameters: 1(Integer)
+2023-10-09 10:02:08.647 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20005} Parameters : [1]
+2023-10-09 10:02:08.647 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20005} Types : [INTEGER]
+2023-10-09 10:02:08.687 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20005} executed. 39.202 millis. select  
+        id,name,image,
+        score,download_format,publish_month,
+        key_word,archive_type_id,
+        open,
+        download_url_id,download_url,
+        intro_id,intro,
+        authors,publish_houses,
+        create_time as upload_time,
+        update_time as last_time
+     
+        from t_book_detail
+        where id = ?
+        group by id
+2023-10-09 10:02:08.687 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} open
+2023-10-09 10:02:08.687 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Header: [id, name, image, score, download_format, publish_month, key_word, archive_type_id, open, download_url_id, download_url, intro_id, intro, authors, publish_houses, create_time, update_time]
+2023-10-09 10:02:08.688 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [1, 技术陷阱, 1693380712834.jpg, 4.0, AZW3/MOBI, 2019/08, 技术, 12, 1, 2, bbbbbb, 8, aaupdeaaaaa, 1:弗雷?卡尔, 1:中信出版社, 2023-09-27 14:48:27.0, 2023-10-07 19:47:49.0]
+2023-10-09 10:02:08.688 [http-nio-8080-exec-7] DEBUG com.bookroles.mapper.BookMapper.queryDetail - <==      Total: 1
+2023-10-09 10:02:08.688 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} closed
+2023-10-09 10:02:08.688 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20005} clearParameters. 
+2023-10-09 10:02:08.688 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, stmt-20005} clearBatch. 
+2023-10-09 10:02:08.688 [http-nio-8080-exec-7] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20005} enter cache
+2023-10-09 10:02:08.688 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40822940]
+2023-10-09 10:02:08.689 [http-nio-8080-exec-7] DEBUG druid.sql.Connection - {conn-10003} pool-recycle
+2023-10-09 10:02:08.689 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2023-10-09 10:02:08.689 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21941866] was not registered for synchronization because synchronization is not active
+2023-10-09 10:02:08.690 [http-nio-8080-exec-7] DEBUG druid.sql.Connection - {conn-10003} pool-connect
+2023-10-09 10:02:08.690 [http-nio-8080-exec-7] DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [ConnectionProxyImpl{connectedTime=2023-10-09 10:02:01.892, closeCount=0, lastValidateTimeMillis=2023-10-09 10:02:01.894}] will not be managed by Spring
+2023-10-09 10:02:08.690 [http-nio-8080-exec-7] DEBUG c.bookroles.mapper.BookMapper.queryBookDownloadUrl - ==>  Preparing: select id,book_id,book_name,url, can_use,create_time,update_time from t_book_download_url where 1=1 and book_id = ? and can_use = ?
+2023-10-09 10:02:08.694 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20006} created. select  
+        id,book_id,book_name,url,
+        can_use,create_time,update_time
+     
+        from t_book_download_url
+        where 1=1
+         
+             and book_id = ? 
+         
+         
+         
+             and can_use = ?
+2023-10-09 10:02:08.694 [http-nio-8080-exec-7] DEBUG c.bookroles.mapper.BookMapper.queryBookDownloadUrl - ==> Parameters: 1(Integer), 0(Integer)
+2023-10-09 10:02:08.694 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20006} Parameters : [1, 0]
+2023-10-09 10:02:08.694 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20006} Types : [INTEGER, INTEGER]
+2023-10-09 10:02:08.697 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20006} executed. 3.3732 millis. select  
+        id,book_id,book_name,url,
+        can_use,create_time,update_time
+     
+        from t_book_download_url
+        where 1=1
+         
+             and book_id = ? 
+         
+         
+         
+             and can_use = ?
+2023-10-09 10:02:08.698 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} open
+2023-10-09 10:02:08.698 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Header: [id, book_id, book_name, url, can_use, create_time, update_time]
+2023-10-09 10:02:08.698 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Result: [1, 1, 技术陷阱, dwdahdiu, 0, 2023-10-04 19:48:58.0, 2023-10-06 01:14:54.0]
+2023-10-09 10:02:08.699 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Result: [3, 1, 技术陷阱, edf, 0, 2023-10-02 11:44:21.0, 2023-10-03 12:20:15.0]
+2023-10-09 10:02:08.699 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Result: [4, 1, 技术陷阱, ghi, 0, 2023-10-02 11:44:36.0, 2023-10-02 11:44:20.0]
+2023-10-09 10:02:08.699 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Result: [5, 1, 技术陷阱, hihih, 0, 2023-10-03 10:11:11.0, 2023-10-05 17:28:50.0]
+2023-10-09 10:02:08.699 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Result: [6, 1, 技术陷阱, https://pan.baidu.com/s/1kcy4jmJSgXdtEpOyGjRtMg?pwd=1, 0, 2023-10-02 11:43:34.0, 2023-10-05 22:34:07.0]
+2023-10-09 10:02:08.700 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Result: [7, 1, 技术陷阱, qwe, 0, 2023-10-02 12:39:17.0, 2023-10-05 17:28:50.0]
+2023-10-09 10:02:08.700 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} Result: [11, 1, 技术陷阱, qweqwe, 0, 2023-10-05 02:09:21.0, 2023-10-05 02:06:50.0]
+2023-10-09 10:02:08.700 [http-nio-8080-exec-7] DEBUG c.bookroles.mapper.BookMapper.queryBookDownloadUrl - <==      Total: 7
+2023-10-09 10:02:08.700 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20006, rs-50006} closed
+2023-10-09 10:02:08.700 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20006} clearParameters. 
+2023-10-09 10:02:08.700 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, stmt-20006} clearBatch. 
+2023-10-09 10:02:08.700 [http-nio-8080-exec-7] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20006} enter cache
+2023-10-09 10:02:08.701 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@21941866]
+2023-10-09 10:02:08.701 [http-nio-8080-exec-7] DEBUG druid.sql.Connection - {conn-10003} pool-recycle
+2023-10-09 10:02:08.701 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2023-10-09 10:02:08.701 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@63eafe8d] was not registered for synchronization because synchronization is not active
+2023-10-09 10:02:08.702 [http-nio-8080-exec-7] DEBUG druid.sql.Connection - {conn-10003} pool-connect
+2023-10-09 10:02:08.702 [http-nio-8080-exec-7] DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [ConnectionProxyImpl{connectedTime=2023-10-09 10:02:01.892, closeCount=0, lastValidateTimeMillis=2023-10-09 10:02:01.894}] will not be managed by Spring
+2023-10-09 10:02:08.702 [http-nio-8080-exec-7] DEBUG com.bookroles.mapper.BookMapper.queryBookIntro - ==>  Preparing: select id,book_id,book_name,intro, can_use,create_time,update_time from t_book_intro where 1=1 and book_id = ? and can_use = ?
+2023-10-09 10:02:08.703 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20007} created. select  
+        id,book_id,book_name,intro,
+        can_use,create_time,update_time
+     
+        from t_book_intro
+        where 1=1
+         
+             and book_id = ? 
+         
+         
+         
+             and can_use = ?
+2023-10-09 10:02:08.703 [http-nio-8080-exec-7] DEBUG com.bookroles.mapper.BookMapper.queryBookIntro - ==> Parameters: 1(Integer), 0(Integer)
+2023-10-09 10:02:08.703 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20007} Parameters : [1, 0]
+2023-10-09 10:02:08.703 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20007} Types : [INTEGER, INTEGER]
+2023-10-09 10:02:08.705 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20007} executed. 1.6607 millis. select  
+        id,book_id,book_name,intro,
+        can_use,create_time,update_time
+     
+        from t_book_intro
+        where 1=1
+         
+             and book_id = ? 
+         
+         
+         
+             and can_use = ?
+2023-10-09 10:02:08.705 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} open
+2023-10-09 10:02:08.705 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} Header: [id, book_id, book_name, intro, can_use, create_time, update_time]
+2023-10-09 10:02:08.706 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} Result: [1, 1, 技术陷阱, <p>本全面地回顾了近几百年<a target='_blank' href='https://baike.baidu.com/item/技术/13014499?fromModule=lemma_inlink'>技术</a>进步的历史，以及它如何从根本上改变了社会成员之间的经济和政治权力分配。</p><p>本书作者将带领读者们遍览各个时代技术进步对人们工作形态的影响，揭示不同时代“打工人”的处境，并最终将目光转向未来，试图分析当前的AI革命将对我们的工作造成何种影响，以及我们该如何做出应对。作者力图说明，技术进步对收入造成何种影响，将决定人们对它的态度。 </p><p><a target='_blank' href='https://baike.baidu.com/item/工业革命/895?fromModule=lemma_inlink'>工业革命</a>是历史上的重大时刻，但当时几乎没有人意识到它的巨大后果。</p><p>正如本书所表明的那样，工业革命从长远来看创造了前所未有的财富和繁荣，但机械化的直接后果对大量人口来说是毁灭性的。中等收入岗位减少，工资停滞不前，劳动收入占比下降，利润激增，经济不平等加剧。</p><p>本书作者卡尔·贝内迪克特·弗雷证明，这些趋势大体上反映了我们现在这个始于计算机革命的自动化时代的趋势。正如工业革命最终为社会带来非同寻常的利益一样，人工智能系统也有潜力做到这一点。</p><p>《技术陷阱》表明，在眼下这场新的技术革命中，过去的教训可以帮助我们更有效地面对现在的状况, 0, 2023-10-02 11:45:07.0, 2023-10-06 01:14:54.0]
+2023-10-09 10:02:08.706 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} Result: [5, 1, 技术陷阱, abcx, 0, 2023-10-02 11:44:58.0, 2023-10-03 12:20:15.0]
+2023-10-09 10:02:08.707 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} Result: [6, 1, 技术陷阱, efg, 0, 2023-10-02 11:45:23.0, 2023-10-03 12:21:00.0]
+2023-10-09 10:02:08.708 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} Result: [7, 1, 技术陷阱, qweqwe, 0, 2023-10-05 02:09:57.0, 2023-10-05 02:07:26.0]
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} Result: [9, 1, 技术陷阱, grgrgrggrgrgrg, 0, 2023-10-05 20:05:40.0, 2023-10-05 20:04:49.0]
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG com.bookroles.mapper.BookMapper.queryBookIntro - <==      Total: 5
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG druid.sql.ResultSet - {conn-10003, pstmt-20007, rs-50007} closed
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, pstmt-20007} clearParameters. 
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG druid.sql.Statement - {conn-10003, stmt-20007} clearBatch. 
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20007} enter cache
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@63eafe8d]
+2023-10-09 10:02:08.709 [http-nio-8080-exec-7] DEBUG druid.sql.Connection - {conn-10003} pool-recycle
+2023-10-09 10:05:10.117 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2023-10-09 10:05:10.136 [main] DEBUG druid.sql.Connection - {conn-10001} closed
+2023-10-09 10:05:10.137 [main] DEBUG druid.sql.Connection - {conn-10002} closed
+2023-10-09 10:05:10.137 [main] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20003} exit cache
+2023-10-09 10:05:10.137 [main] DEBUG druid.sql.Statement - {conn-10003, pstmt-20003} closed
+2023-10-09 10:05:10.137 [main] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20004} exit cache
+2023-10-09 10:05:10.137 [main] DEBUG druid.sql.Statement - {conn-10003, pstmt-20004} closed
+2023-10-09 10:05:10.137 [main] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20005} exit cache
+2023-10-09 10:05:10.137 [main] DEBUG druid.sql.Statement - {conn-10003, pstmt-20005} closed
+2023-10-09 10:05:10.138 [main] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20006} exit cache
+2023-10-09 10:05:10.138 [main] DEBUG druid.sql.Statement - {conn-10003, pstmt-20006} closed
+2023-10-09 10:05:10.138 [main] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10003, pstmt-20007} exit cache
+2023-10-09 10:05:10.138 [main] DEBUG druid.sql.Statement - {conn-10003, pstmt-20007} closed
+2023-10-09 10:05:10.138 [main] DEBUG druid.sql.Connection - {conn-10003} closed
+2023-10-09 10:05:10.142 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2023-10-09 22:34:31.616 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-10-09 22:34:31.626 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'bookMapper' and 'com.bookroles.mapper.BookMapper' mapperInterface
+2023-10-09 22:34:31.633 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.mybatis.spring.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'dictionaryMapper' and 'com.bookroles.mapper.DictionaryMapper' mapperInterface
+2023-10-09 22:34:33.532 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis/mybatis.xml]'
+2023-10-09 22:34:33.907 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [H:\programmer\Interviewspace\bookroles\bookroles-manager\target\bookroles-manager-1.0-SNAPSHOT\WEB-INF\classes\mapper\BookMapper.xml]'
+2023-10-09 22:34:33.934 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.mybatis.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [H:\programmer\Interviewspace\bookroles\bookroles-manager\target\bookroles-manager-1.0-SNAPSHOT\WEB-INF\classes\mapper\DictionaryMapper.xml]'
+2023-10-09 22:34:36.227 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+2023-10-09 22:34:36.232 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2023-10-09 22:34:36.357 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.m.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+2023-10-09 22:34:36.360 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2023-10-09 22:34:36.362 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.engine.AbstractConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2023-10-09 22:34:36.364 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type jdk.proxy3.$Proxy38
+2023-10-09 22:34:36.381 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+2023-10-09 22:34:36.388 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via user class loader
+2023-10-09 22:34:36.392 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+2023-10-09 22:34:36.392 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2023-10-09 22:34:36.392 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+2023-10-09 22:34:36.412 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.i.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2023-10-09 22:34:37.082 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2023-10-09 22:34:37.118 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2023-10-09 22:34:37.118 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2023-10-09 22:34:37.119 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2023-10-09 22:34:37.119 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2023-10-09 22:34:37.119 [RMI TCP Connection(2)-127.0.0.1] DEBUG o.h.v.i.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2023-10-09 22:35:07.165 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...

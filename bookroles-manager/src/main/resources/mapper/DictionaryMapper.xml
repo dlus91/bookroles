@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bookroles.mapper.DictionaryMapper">
+
+    <select id="query" resultType="com.bookroles.service.model.Dictionary">
+        select id,name,type from t_dictionary
+    </select>
+
+    <insert id="saveArchiveTypeName" parameterType="com.bookroles.service.model.Dictionary">
+        insert into dictionary_book_achive_type(name) values(#{name})
+    </insert>
+
+    <update id="updateArchiveTypeName" parameterType="com.bookroles.service.model.Dictionary">
+        update dictionary_book_achive_type set name = #{name} where id = #{id}
+    </update>
+
+    <insert id="saveDictionaryOther" parameterType="com.bookroles.service.model.Dictionary">
+        insert into dictionary_other(name,type) values(#{name},#{type})
+    </insert>
+
+    <update id="updateDictionaryOther" parameterType="com.bookroles.service.model.Dictionary">
+        update dictionary_other set name = #{name}, type = #{type} where id = #{id}
+    </update>
+
+    <select id="queryAuthor" resultType="com.bookroles.service.model.Dictionary" parameterType="com.bookroles.service.model.Dictionary">
+        select id,name from dictionary_book_author where 1=1
+        <if test="name != null and name != ''">
+            <trim prefix="and">
+                <bind name="name" value="'%' + name + '%'" />
+                name like '${name}'
+            </trim>
+        </if>
+    </select>
+
+    <select id="validAuthorId" parameterType="com.bookroles.service.model.Dictionary" resultType="int">
+        select count(*) from dictionary_book_author where 1=1
+        <if test="id > 0">
+            <trim prefix="and">
+                id = #{id}
+            </trim>
+        </if>
+        <if test="name != null">
+            <trim prefix="and">
+                name = #{name}
+            </trim>
+        </if>
+    </select>
+
+    <insert id="saveAuthorName" parameterType="com.bookroles.service.model.Dictionary">
+        insert into dictionary_book_author(name) values(#{name})
+    </insert>
+
+    <update id="updateAuthorName" parameterType="com.bookroles.service.model.Dictionary">
+        update dictionary_book_author set name = #{name} where id = #{id}
+    </update>
+
+    <select id="queryPublishHouse" resultType="com.bookroles.service.model.Dictionary" parameterType="com.bookroles.service.model.Dictionary">
+        select id,name from dictionary_book_publish_house where 1=1
+        <if test="name != null and name != ''">
+            <trim prefix="and">
+                <bind name="name" value="'%' + name + '%'" />
+                name like '${name}'
+            </trim>
+        </if>
+    </select>
+
+    <select id="validPublishHouseId" parameterType="com.bookroles.service.model.Dictionary" resultType="int">
+        select count(*) from dictionary_book_publish_house where 1=1
+        <if test="id > 0">
+            <trim prefix="and">
+                id = #{id}
+            </trim>
+        </if>
+        <if test="name != null">
+            <trim prefix="and">
+                name = #{name}
+            </trim>
+        </if>
+    </select>
+
+    <insert id="savePublishHouseName" parameterType="com.bookroles.service.model.Dictionary">
+        insert into dictionary_book_publish_house(name) values(#{name})
+    </insert>
+
+    <update id="updatePublishHouseName" parameterType="com.bookroles.service.model.Dictionary">
+        update dictionary_book_publish_house set name = #{name} where id = #{id}
+    </update>
+
+
+</mapper>

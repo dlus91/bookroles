@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bookroles.mapper.BookMapper">
+
+    <!-- book表 -->
+    <sql id="pageQueryColumn">
+        id,name,image,
+        score,download_format,publish_month,
+        key_word,archive_type_id,
+        open,download_url_id,intro_id,
+        GROUP_CONCAT(DISTINCT CONCAT(author_id,':',author_name)) as authors,
+        GROUP_CONCAT(DISTINCT CONCAT(publish_house_id,':',publish_house_name)) as publish_houses,
+        create_time as upload_time,
+        update_time as last_time
+    </sql>
+
+    <select id="queryPage" resultType="com.bookroles.service.model.Book" parameterType="com.bookroles.service.model.Book">
+        select <include refid="pageQueryColumn"/>
+        from t_book
+        where 1=1
+
+        <if test="id > 0">
+            <trim prefix="and">
+                id = #{id}
+            </trim>
+        </if>
+        <if test="name != null and name != ''">
+            <trim prefix="and">
+                <bind name="name" value="'%' + name + '%'" />
+                name like '${name}'
+            </trim>
+        </if>
+        <if test="beginScore > 0">
+            <trim prefix="and">
+                <![CDATA[ score >= #{beginScore} ]]>
+            </trim>
+        </if>
+        <if test="endScore > 0">
+            <trim prefix="and">
+                <![CDATA[ score <= #{endScore} ]]>
+            </trim>
+        </if>
+        <if test="downloadFormat != null and downloadFormat != ''">
+            <trim prefix="and">
+                download_format = #{downloadFormat}
+            </trim>
+        </if>
+        <if test="authorName != null and authorName != ''">
+            <trim prefix="and">
+                <bind name="authorName" value="'%' + authorName + '%'" />
+                author_name like '${authorName}'
+            </trim>
+        </if>
+        <if test="publishHouseName != null and publishHouseName != ''">
+            <trim prefix="and">
+                <bind name="publishHouseName" value="'%' + publishHouseName + '%'" />
+                publish_house_name like '${publishHouseName}'
+            </trim>
+        </if>
+        <if test="beginPublishTimestamp > 0">
+            <trim prefix="and">
+                <![CDATA[ UNIX_TIMESTAMP(CONCAT(publish_month,'/','01')) * 1000 >= #{beginPublishTimestamp} ]]>
+            </trim>
+        </if>
+        <if test="endPublishTimestamp > 0">
+            <trim prefix="and">
+                <![CDATA[ UNIX_TIMESTAMP(CONCAT(publish_month,'/','01')) * 1000 <= #{endPublishTimestamp} ]]>
+            </trim>
+        </if>
+        <if test="beginUploadTime > 0">
+            <trim prefix="and">
+                <![CDATA[ create_time >= #{beginUploadTime} ]]>
+            </trim>
+        </if>
+        <if test="endUploadTime > 0">
+            <trim prefix="and">
+                <![CDATA[ create_time <= #{endUploadTime} ]]>
+            </trim>
+        </if>
+        <if test="archiveTypeId > 0">
+            <trim prefix="and">
+                archive_type_id = #{archiveTypeId}
+            </trim>
+        </if>
+        <if test="open &lt; 2">
+            <trim prefix="and">
+                open = #{open}
+            </trim>
+        </if>
+        group by id
+    </select>
+
+    <sql id="pageDetailColumn">
+        id,name,image,
+        score,download_format,publish_month,
+        key_word,archive_type_id,
+        open,
+        download_url_id,download_url,
+        intro_id,intro,
+        authors,publish_houses,
+        create_time as upload_time,
+        update_time as last_time
+    </sql>
+
+    <select id="queryDetail" resultType="com.bookroles.service.model.Book" parameterType="int">
+        select <include refid="pageDetailColumn"/>
+        from t_book_detail
+        where id = #{id}
+        group by id
+    </select>
+
+    <select id="validBookById" resultType="int" parameterType="int">
+        select count(*) from datawarehouse_book where id = #{id}
+    </select>
+
+    <select id="validBookByName" parameterType="com.bookroles.service.model.Book" resultType="int">
+        select count(*) from datawarehouse_book where name = #{name}
+    </select>
+
+    <select id="getBookIdByName" resultType="int" parameterType="String">
+        select id from datawarehouse_book where name = #{name}
+    </select>
+
+    <insert id="saveBook" parameterType="com.bookroles.service.model.Book" useGeneratedKeys="true" keyProperty="id">
+        insert into datawarehouse_book(name,image,score,download_format,publish_month,key_word,archive_type_id,download_url_id,intro_id,open,create_time)
+        values (#{name},#{image},#{score},#{downloadFormat},#{publishMonth},#{keyWord},#{archiveTypeId},#{downloadUrlId},#{introId},#{open},FROM_UNIXTIME(#{createTime}/1000))
+    </insert>
+
+    <update id="updateBookById" parameterType="com.bookroles.service.model.Book">
+        update datawarehouse_book set
+        name = #{name} , image = #{image} , score = #{score} , download_format = #{downloadFormat} ,
+        publish_month = #{publishMonth} , key_word = #{keyWord}
+        <if test="archiveTypeId > 0">
+            <trim prefix=",">
+                archive_type_id = #{archiveTypeId}
+            </trim>
+        </if>
+        <if test="downloadUrlId > 0">
+            <trim prefix=",">
+                download_url_id = #{downloadUrlId}
+            </trim>
+        </if>
+        <if test="introId > 0">
+            <trim prefix=",">
+                intro_id = #{introId}
+            </trim>
+        </if>
+        <if test="open &lt; 2">
+            <trim prefix=",">
+                open = #{open}
+            </trim>
+        </if>
+        where id = #{id}
+    </update>
+
+    <update id="updateBookFieldOpen" parameterType="int">
+        update datawarehouse_book set open = (case when open = 0 then 1 else 0 end) where id = #{id}
+    </update>
+
+
+    <!-- bookDownloadUrl表 -->
+    <sql id="pageBookDownloadUrlColumn">
+        id,book_id,book_name,url,
+        can_use,create_time,update_time
+    </sql>
+
+    <select id="queryBookDownloadUrl" resultType="com.bookroles.service.model.BookDownloadUrl" parameterType="com.bookroles.service.model.BookDownloadUrl">
+        select <include refid="pageBookDownloadUrlColumn"/>
+        from t_book_download_url
+        where 1=1
+        <if test="bookId > 0">
+            <trim prefix="and">
+                book_id = #{bookId}
+            </trim>
+        </if>
+        <if test="bookName != null and bookName !=''">
+            <trim prefix="and">
+                <bind name="bookName" value="'%' + bookName + '%'"/>
+                book_name like '${bookName}'
+            </trim>
+        </if>
+        <if test="canUse &lt; 2 ">
+            <trim prefix="and">
+                can_use = #{canUse}
+            </trim>
+        </if>
+        <if test="url != null and url != ''">
+            <trim prefix="and">
+            <bind name="url" value="'%' + url + '%'"/>
+                url like '${url}'
+            </trim>
+        </if>
+    </select>
+
+    <select id="validBookDownloadUrl" resultType="int" parameterType="com.bookroles.service.model.BookDownloadUrl">
+        select count(*) from dimension_book_download_url where book_id = #{bookId} and url = #{url}
+    </select>
+
+    <insert id="saveBookDownloadUrl" parameterType="com.bookroles.service.model.BookDownloadUrl" useGeneratedKeys="true" keyProperty="id">
+        insert into dimension_book_download_url(book_id,url,can_use,create_time)
+        values (#{bookId},#{url},0,FROM_UNIXTIME(#{createTime}/1000))
+    </insert>
+
+    <update id="updateBookDownloadUrlFieldUrl" parameterType="com.bookroles.service.model.BookDownloadUrl">
+        update dimension_book_download_url set
+            url = #{url}
+        where id = #{id} and book_id = #{bookId}
+    </update>
+
+
+    <!-- bookIntro表 -->
+    <sql id="pageBookIntroColumn">
+        id,book_id,book_name,intro,
+        can_use,create_time,update_time
+    </sql>
+
+    <select id="queryBookIntro" resultType="com.bookroles.service.model.BookIntro" parameterType="com.bookroles.service.model.BookIntro">
+        select <include refid="pageBookIntroColumn"/>
+        from t_book_intro
+        where 1=1
+        <if test="bookId > 0">
+            <trim prefix="and">
+                book_id = #{bookId}
+            </trim>
+        </if>
+        <if test="bookName != null and bookName !=''">
+            <trim prefix="and">
+                <bind name="bookName" value="'%' + bookName + '%'"/>
+                book_name like '${bookName}'
+            </trim>
+        </if>
+        <if test="canUse &lt; 2 ">
+            <trim prefix="and">
+                can_use = #{canUse}
+            </trim>
+        </if>
+        <if test="intro != null and intro != ''">
+            <trim prefix="and">
+                <bind name="intro" value="'%' + intro + '%'"/>
+                intro like '${intro}'
+            </trim>
+        </if>
+    </select>
+
+    <select id="validBookIntro" resultType="int" parameterType="com.bookroles.service.model.BookIntro">
+        select count(*) from dimension_book_intro where book_id = #{bookId} and intro = #{intro}
+    </select>
+
+    <insert id="saveBookIntro" parameterType="com.bookroles.service.model.BookIntro" useGeneratedKeys="true" keyProperty="id">
+        insert into dimension_book_intro(book_id,intro,can_use,create_time)
+        values (#{bookId},#{intro},0,FROM_UNIXTIME(#{createTime}/1000))
+    </insert>
+
+    <update id="updateBookIntroFieldIntro" parameterType="com.bookroles.service.model.BookIntro">
+        update dimension_book_intro set
+            intro = #{intro}
+        where id = #{id} and book_id = #{bookId}
+    </update>
+
+
+    <!-- bookPublishHouse表 -->
+    <sql id="pageBookPublishHouseColumn">
+        book_id,book_name,publish_house_id,publish_house_name
+    </sql>
+
+    <select id="queryBookPublishHouse" resultType="com.bookroles.service.model.BookPublishHouse" parameterType="com.bookroles.service.model.BookPublishHouse">
+        select <include refid="pageBookPublishHouseColumn"/>
+        from t_book_publish_house
+        where 1=1
+        <if test="bookId > 0">
+            <trim prefix="and">
+                book_id = #{bookId}
+            </trim>
+        </if>
+        <if test="bookName != null and bookName !=''">
+            <trim prefix="and">
+                <bind name="bookName" value="'%' + bookName + '%'"/>
+                book_name like '${bookName}'
+            </trim>
+        </if>
+        <if test="publishHouseId > 0">
+            <trim prefix="and">
+                publish_house_id = #{publishHouseId}
+            </trim>
+        </if>
+        <if test="publishHouseName != null and publishHouseName != ''">
+            <trim prefix="and">
+                <bind name="publishHouseName" value="'%' + publishHouseName + '%'"/>
+                publish_house_name like '${publishHouseName}'
+            </trim>
+        </if>
+    </select>
+
+    <select id="validBookPublishHouse" parameterType="com.bookroles.service.model.BookPublishHouse" resultType="int">
+        select count(*) from dimension_book_publish_house where book_id = #{bookId} and publish_house_id = #{publishHouseId}
+    </select>
+    
+    <insert id="saveBookPublishHouse" parameterType="com.bookroles.service.model.BookPublishHouse">
+        insert into dimension_book_publish_house(book_id,publish_house_id) values(#{bookId},#{publishHouseId})
+    </insert>
+
+    <update id="updateBookPublishHouseFieldPublishHouseId" parameterType="com.bookroles.service.model.BookPublishHouse">
+        update dimension_book_publish_house set publish_house_id = #{newPublishHouseId} where book_id = #{bookId} and publish_house_id = #{publishHouseId}
+    </update>
+
+    <update id="updateBookPublishHouseFieldBookId" parameterType="com.bookroles.service.model.BookPublishHouse">
+        update dimension_book_publish_house set book_id = #{newBookId} where book_id = #{bookId} and publish_house_id = #{publishHouseId}
+    </update>
+
+    <delete id="deleteBookPublishHouse" parameterType="com.bookroles.service.model.BookPublishHouse">
+        delete from dimension_book_publish_house where book_id = #{bookId} and publish_house_id = #{publishHouseId}
+    </delete>
+
+
+    <!-- bookAuthor表 -->
+    <sql id="pageBookAuthorColumn">
+        book_id,book_name,author_id,author_name
+    </sql>
+
+    <select id="queryBookAuthor" resultType="com.bookroles.service.model.BookAuthor" parameterType="com.bookroles.service.model.BookAuthor">
+        select <include refid="pageBookAuthorColumn"/>
+        from t_book_author
+        where 1=1
+        <if test="bookId > 0">
+            <trim prefix="and">
+                book_id = #{bookId}
+            </trim>
+        </if>
+        <if test="bookName != null and bookName !=''">
+            <trim prefix="and">
+                <bind name="bookName" value="'%' + bookName + '%'"/>
+                book_name like '${bookName}'
+            </trim>
+        </if>
+        <if test="authorId > 0">
+            <trim prefix="and">
+                author_id = #{authorId}
+            </trim>
+        </if>
+        <if test="authorName != null and authorName != ''">
+            <trim prefix="and">
+                <bind name="authorName" value="'%' + authorName + '%'"/>
+                author_name like '${authorName}'
+            </trim>
+        </if>
+    </select>
+
+    <select id="validBookAuthor" parameterType="com.bookroles.service.model.BookAuthor" resultType="int">
+        select count(*) from dimension_book_author where book_id = #{bookId} and author_id = #{authorId}
+    </select>
+    
+    <insert id="saveBookAuthor" parameterType="com.bookroles.service.model.BookAuthor">
+        insert into dimension_book_author(book_id,author_id) values(#{bookId},#{authorId})
+    </insert>
+
+    <update id="updateBookAuthorFieldAuthorId" parameterType="com.bookroles.service.model.BookAuthor">
+        update dimension_book_author set author_id = #{newAuthorId} where book_id = #{bookId} and author_id = #{authorId}
+    </update>
+
+    <update id="updateBookAuthorFieldBookId" parameterType="com.bookroles.service.model.BookAuthor">
+        update dimension_book_author set book_id = #{newBookId} where book_id = #{bookId} and author_id = #{authorId}
+    </update>
+
+    <delete id="deleteBookAuthor" parameterType="com.bookroles.service.model.BookAuthor">
+        delete from dimension_book_author where book_id = #{bookId} and author_id = #{authorId}
+    </delete>
+
+
+    <!-- bookArchiveType表 -->
+    <sql id="pageBookArchiveTypeColumn">
+        book_id,book_name,archive_type_id,archive_type_name,book_use
+    </sql>
+
+    <select id="queryBookArchiveType" resultType="com.bookroles.service.model.BookArchiveType" parameterType="com.bookroles.service.model.BookArchiveType">
+        select <include refid="pageBookArchiveTypeColumn"/>
+        from t_book_archive_type
+        where 1=1
+        <if test="bookId > 0">
+            <trim prefix="and">
+                book_id = #{bookId}
+            </trim>
+        </if>
+        <if test="bookName != null and bookName !=''">
+            <trim prefix="and">
+                <bind name="bookName" value="'%' + bookName + '%'"/>
+                book_name like '${bookName}'
+            </trim>
+        </if>
+        <if test="archiveTypeId > 0">
+            <trim prefix="and">
+                archive_type_id = #{archiveTypeId}
+            </trim>
+        </if>
+        <if test="archiveTypeName != null and archiveTypeName != ''">
+            <trim prefix="and">
+                <bind name="archiveTypeName" value="'%' + archiveTypeName + '%'"/>
+                archive_type_name like '${archiveTypeName}'
+            </trim>
+        </if>
+        <if test="bookUse &lt; 2">
+            <trim prefix="and">
+                book_use = #{bookUse}
+            </trim>
+        </if>
+    </select>
+
+    <select id="validBookArchiveType" parameterType="com.bookroles.service.model.BookArchiveType" resultType="int">
+        select count(*) from dimension_book_archive_type where book_id = #{bookId} and archive_type_id = #{archiveTypeId}
+    </select>
+
+    <insert id="saveBookArchiveType" parameterType="com.bookroles.service.model.BookArchiveType">
+        insert into dimension_book_archive_type(book_id,archive_type_id) values(#{bookId},#{archiveTypeId})
+    </insert>
+
+    <update id="updateBookArchiveTypeFieldArchiveTypeId" parameterType="com.bookroles.service.model.BookArchiveType">
+        update dimension_book_archive_type set archive_type_id = #{newArchiveTypeId} where book_id = #{bookId} and archive_type_id = #{archiveTypeId}
+    </update>
+
+    <update id="updateBookArchiveTypeFieldBookId" parameterType="com.bookroles.service.model.BookArchiveType">
+        update dimension_book_archive_type set book_id = #{newBookId} where book_id = #{bookId} and archive_type_id = #{archiveTypeId}
+    </update>
+
+    <delete id="deleteBookArchiveType" parameterType="com.bookroles.service.model.BookArchiveType">
+        delete from dimension_book_archive_type where book_id = #{bookId} and archive_type_id = #{archiveTypeId}
+    </delete>
+
+    
+</mapper>

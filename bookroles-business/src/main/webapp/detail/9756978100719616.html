@@ -1,0 +1,404 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8,IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bookroles.com</title>
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.min.css">
+    <script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/base64.js"></script>
+    <script type="text/javascript" src="../js/crypto-js2.min.js"></script>
+
+    <style type="text/css">
+        @font-face{
+            font-family: bookroles1;
+            src:url('../css/bookroles1.ttf') format("truetype");
+            text-rendering: optimizeLegibility;
+        }
+        body{
+            background-color: #EEEEEE;
+        }
+        .top-search{
+            padding: 0.5rem 0;
+            opacity:0.9;
+        }
+        .card{
+            margin-bottom: 5px;
+            font-family: bookroles1;
+        }
+        button{
+            font-family: bookroles1;
+        }
+        .modal-dialog{
+            font-family: bookroles1;
+        }
+        .card .card-img-top{
+            width: 255px;
+            height: 340px;
+        }
+        .card .content-intro{
+            border: 1px solid #EEEEEE;
+        }
+    </style>
+</head>
+<body style="display: none;">
+    <div id="header" class="top-search container sticky-top bg-white"></div>
+    <div class="container card">
+        <div class="card-body">
+            <h3 class="card-title"><b><a href="javascript:void(0);" id="titleBookName" style="color:black;"></a></b></h3>
+            <b class="linkAuthor"></b>
+            <i class="bi bi-houses"></i>
+            <a href="javascript:void(0);" class="card-link text-info"><span id="linkPublishHouse"></span></a>
+            <i class="bi bi-archive"></i>
+            <a href="javascript:void(0);" class="card-link text-info"><span id="linkArchiveType"></span></a>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-3 text-left">
+                <img id="imgUrl" rel="prefetch" class="card-img-top img-fluid img-thumbnail" src="../image/bgbook.jpg" title="">
+            </div>
+            <div class="col-lg-4" style="background-color: #EEEEEE;">
+                <div class="card-body card-detail-row">
+                    <p class="card-text"><span class="w-50 p-2" title="出版日期"><i class="bi bi-calendar3"></i><b> 出版日期:</b></span><span id="publishMonth"></span></p>
+                    <p class="card-text"><span class="w-50 p-2" title="本站书籍评分"><i class="bi bi-list-stars"></i><b> 书籍评分:</b></span><span id="score" style="color:goldenrod;"></span></p>
+                    <p class="card-text"><span class="w-50 p-2" title="本站上传时间"><i class="bi bi-arrow-up-square"></i><b> 上传时间:</b></span><span id="uploadTime"></span></p>
+                    <p class="card-text"><span class="w-50 p-2" title="本站下载格式"><i class="bi bi-arrow-down-square"></i><b> 下载格式:</b></span><span id="downloadFormat"></span></p>
+                    <p class="card-text"><span class="w-50 p-2" title="本站查询次数"><i class="bi bi-search-heart-fill"></i><b> 查询次数:</b></span><span class="spinner-border spinner-border-sm"></span><span id="searchCount"></span></p>
+                    <p class="card-text"><span class="w-50 p-2" title="本站最近查询时间"><i class="bi bi-search-heart-fill"></i><b> 查询时间:</b></span><span class="spinner-border spinner-border-sm"></span><span id="searchTime"></span></p>
+                    <p class="card-text"><span class="w-50 p-2" title="本站下载次数"><i class="bi bi-cloud-download-fill"></i><b> 下载次数:</b></span><span class="spinner-border spinner-border-sm"></span><span id="downloadCount"></span></p>
+                    <p class="card-text"><span class="w-50 p-2" title="本站最近下载时间"><i class="bi bi-cloud-download-fill"></i><b> 下载时间:</b></span><span class="spinner-border spinner-border-sm"></span><span id="downloadTime"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body content-intro">
+            <h5 class="card-title"><b>简介</b></h5>
+            <p class="card-text">
+
+            </p>
+        </div>
+        <div class="card-body" id="validCodeBody" style="visibility: hidden;">
+            <h5 class="card-title"><b>下载地址</b></h5>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" id="downBtn" data-toggle="modal" data-target="#validCodeModal">点击获得地址</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="validCodeModal" tabindex="-1" role="dialog" aria-labelledby="validCodeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="validCodeModallLabel">下载地址</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group" id="validCodeGroup">
+                        <label for="validCodeInput" class="col-form-label">验证码:&nbsp;&nbsp;</label>
+                        <input id="validCodeInput" class="form-control" type="text" placeholder="验证码">
+                        <canvas id="canvas" width="100px" height="40px"></canvas>
+                        <button id="validCodeBtn" class="btn btn-info" type="submit" data-valide-code="">验证</button>
+                    </div>
+                    <a id="bookAddress" style="display: none;" target="_blank" href="javascript:void(0);" class="card-link"></a>
+                    <i id="validCodeInputHint" style="visibility: hidden" class="bi bi-bag-x-fill text-danger"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+
+    <script type="text/javascript">
+
+        function home() {
+            window.location.href = "../home.jsp";
+        }
+
+        const key = "a90e7d2eb24c4b8b88994ab065e377d3";
+        const iv = "bookrolesABcDEFh";
+        function encrypt(content) {
+            return CryptoJS.AES.encrypt(content, CryptoJS.enc.Utf8.parse(key),{
+                iv: CryptoJS.enc.Utf8.parse(iv),
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            }).toString();
+        }
+
+        function decrypt(content) {
+            let decrypted = CryptoJS.AES.decrypt(content, CryptoJS.enc.Utf8.parse(key), {
+                iv: CryptoJS.enc.Utf8.parse(iv),
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            return decrypted.toString(CryptoJS.enc.Utf8);
+        }
+
+        function timestampToDateTime(timestamp){
+            let date = new Date(parseInt(timestamp));
+            let Year = date.getFullYear();
+            let Moth = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+            let Day = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate());
+            let Hour = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours());
+            let Minute = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
+            return Year + '/' + Moth + '/' + Day + ' '+ Hour +':'+ Minute;
+        }
+
+        function headerSearch(){
+            let word = $("#headerSearchInput").val().trim();
+            if(word && word != "null"){
+                let url = "../home.html?module=search&word="+ encodeURIComponent(word);
+                window.open(url);
+            }
+            return;
+        }
+        function openSearchAuthor(author){
+            if(author && author != "null"){
+                let url = "../home.html?module=author&author="+ encodeURIComponent(author);
+                window.open(url);
+            }
+        }
+
+        function starStr(score){
+            let fill_star = "<i class=\"bi bi-star-fill\">";
+            let half_star = "<i class=\"bi bi-star-half\">";
+            let empty_star = "<i class=\"bi bi-star\">";
+            let str = "";
+            let has_half = false;
+            if((score / .5) % 2){has_half = true;}
+            for(let i = 0;i < 5; i++){
+                if(i < score){
+                    if(has_half && i == Math.floor(score)){
+                        str += half_star;
+                    }else{
+                        str += fill_star;
+                    }
+                }else{
+                    str += empty_star
+                }
+
+            }
+            return str;
+        }
+
+        function randomNum(min,max){return Math.floor(Math.random()*(max-min)+min);}
+        function randomColor(min,max){
+            var _r = randomNum(min,max);
+            var _g = randomNum(min,max);
+            var _b = randomNum(min,max);
+            return "rgb("+_r+","+_g+","+_b+")";
+        }
+        function drawPic(){
+            var $canvas = document.getElementById("canvas");
+            var _str = "0123456789";
+            var _picTxt = "";
+            var _num = 4;
+            var _width = $canvas.width;
+            var _height = $canvas.height;
+            var ctx = $canvas.getContext("2d");
+            ctx.textBaseline = "bottom";
+            ctx.fillStyle = randomColor(180,240);
+            ctx.fillRect(0,0,_width,_height);
+            for(var i=0; i<_num; i++){
+                var x = (_width-10)/_num*i+10;
+                var y = randomNum(_height/2,_height);
+                var deg = randomNum(-45,45);
+                var txt = _str[randomNum(0,_str.length)];
+                _picTxt += txt;
+                ctx.fillStyle = randomColor(10,100);
+                ctx.font = randomNum(16,40)+"px SimHei";
+                ctx.translate(x,y);
+                ctx.rotate(deg*Math.PI/180);
+                ctx.fillText(txt, 0,0);
+                ctx.rotate(-deg*Math.PI/180);
+                ctx.translate(-x,-y);
+            }
+            for(var i=0; i<_num; i++){
+                ctx.strokeStyle = randomColor(90,180);
+                ctx.beginPath();
+                ctx.moveTo(randomNum(0,_width), randomNum(0,_height));
+                ctx.lineTo(randomNum(0,_width), randomNum(0,_height));
+                ctx.stroke();
+            }
+            for(var i=0; i<_num*10; i++){
+                ctx.fillStyle = randomColor(0,255);
+                ctx.beginPath();
+                ctx.arc(randomNum(0,_width),randomNum(0,_height), 1, 0, 2*Math.PI);
+                ctx.fill();
+            }
+            $("#validCodeBtn").attr("data-valide-code",_picTxt);
+            return;
+        };
+
+        $(function(){
+            loadEvent();
+            runEvent();
+            function loadEvent(){
+
+                $("#titleBookName").on("click",function(){
+                    $("#headerSearchInput").val($(this).html());
+                });
+
+                $("#titleBookName").on("dblclick",function(){
+                    if($(this).html()){
+                        $("#headerSearchBtn").trigger("click");
+                    }
+                });
+
+                $("#linkPublishHouse").on("click",function(){
+                    $("#headerSearchInput").val($(this).html());
+                });
+
+                $("#linkPublishHouse").on("dblclick",function(){
+                    if($(this).html()){
+                        $("#headerSearchBtn").trigger("click");
+                    }
+                });
+
+                $("#linkArchiveType").on("click",function () {
+                    let archiveTypeId = $(this).attr("archiveTypeId");
+                    if(archiveTypeId){
+                        let url = "../home.html?module=archiveType&id="+ archiveTypeId;
+                        window.open(url);
+                    }
+                });
+
+                $("#downBtn").on("click",function(){
+                    drawPic();
+                });
+
+                $("#validCodeBtn").on("click",function(){
+                    let inputCode = $("#validCodeInput").val();
+                    if(!inputCode){
+                        $("#validCodeInputHint").html("验证码不能为空").removeClass("text-info").addClass("text-danger").css("visibility","visible");
+                        return;
+                    }
+                    if($(this).attr("data-valide-code") == inputCode){
+                        let id = bookDetailData.id;
+                        if(!id) return;
+                        let param = {};
+                        if(id){ param.id = id };
+                        let jParam = JSON.stringify(param)
+                        param = encrypt(jParam);
+                        $.post("/bookroles/book/getDownLoadUrl.do",param,function(result,status){
+                            let resultData = "";
+                            if(decrypt(result).trim()){
+                                resultData = JSON.parse(decrypt(result));
+                            }
+                            if(status == "success"){
+                                $("#validCodeGroup").hide();
+                                $("#bookAddress").attr("href",resultData.address).html(resultData.address).fadeIn();
+                            }else{
+                                console.log("加载失败");
+                            }
+                        });
+                    }else{
+                        $("#validCodeInputHint").html("验证码输入错误，请重新输入").removeClass("text-info").addClass("text-danger").css("visibility","visible");
+                        drawPic();
+                    }
+                });
+
+                $("#validCodeInput").change(function(e){
+                    let inputCode = $("#validCodeInput").val();
+                    let validCode = $("#validCodeBtn").attr("data-valide-code");
+                    if(validCode == inputCode){
+                        $("#validCodeInputHint").html("验证成功，点击地址进入").removeClass("text-danger").addClass("text-info").css("visibility","visible");
+                    }else{
+                        $("#validCodeInputHint").html("验证码输入错误，请重新输入").removeClass("text-info").addClass("text-danger").css("visibility","visible");
+                    }
+                });
+
+                $("#canvas").on("click",function(e){
+                    e.preventDefault();
+                    drawPic();
+                });
+            }
+
+            function showContent(resultData){
+                if(resultData.image){
+                    $("#imgUrl").attr("src","../image/"+resultData.image);
+                }
+                $("#imgUrl").attr("title",resultData.name);
+                $("#titleBookName").html(resultData.name);
+                $("#linkArchiveType").html(resultData.archive_type_name).attr("archiveTypeId",resultData.archive_type_id);
+                let linkAuthorDomStr = "";
+                if(resultData.author){
+                    $.each(resultData.author.split(" "), function(index, str){
+                        linkAuthorDomStr += "<i class=\'bi bi-file-person\'></i><a href=\'javascript:void(0);\' class=\'card-link text-info\' onclick='openSearchAuthor("+"\"" + str + "\""+")'><span>"+str+"</span></a>"
+                    });
+                }
+                $(".linkAuthor").html(linkAuthorDomStr);
+                $("#linkPublishHouse").html(resultData.publish_house);
+                $("#publishHouse").html(resultData.publish_house);
+                $("#publishMonth").html(resultData.publish_month);
+                $("#score").html(starStr(resultData.score)).attr("title",resultData.score);
+                $("#uploadTime").html(resultData.upload_time);
+                $("#downloadFormat").html(resultData.download_format);
+                $("#archiveType").html(resultData.archive_type_name);
+                $("#author").html(resultData.author);
+                $("#searchCount").html(resultData.search_count);
+                if(resultData.search_time && resultData.search_time > 0){
+                    $("#searchTime").html(timestampToDateTime(resultData.search_time));
+                }else{
+                    $("#searchTime").html("无");
+                }
+                $("#downloadCount").html(resultData.download_count);
+                if(resultData.download_time && resultData.download_time > 0){
+                    $("#downloadTime").html(timestampToDateTime(resultData.download_time));
+                }else{
+                    $("#downloadTime").html("无");
+                }
+                $(".content-intro .card-text").html(resultData.content_intro);
+                $("#validCodeBody").css("visibility","visible");
+
+            }
+
+            function showDetailContent(id){
+                setTimeout(function(){
+                    if(!id) return;
+                    let param = {};
+                    if(id){ param.id = id };
+                    let jParam = JSON.stringify(param)
+                    param = encrypt(jParam);
+                    $.post("/bookroles/book/getDetailById.do",param,function(result,status){
+                        $(".card-detail-row .spinner-border").removeClass("spinner-border spinner-border-sm")
+                        let resultData = "";
+                        if(decrypt(result).trim()){
+                            resultData = JSON.parse(decrypt(result));
+                        }
+                        if(status == "success"){
+                            $("#searchCount").html(resultData.search_count);
+                            if(resultData.search_time && resultData.search_time > 0){
+                                $("#searchTime").html(timestampToDateTime(resultData.search_time));
+                            }else{
+                                $("#searchTime").html("无");
+                            }
+                            $("#downloadCount").html(resultData.download_count);
+                            if(resultData.download_time && resultData.download_time > 0){
+                                $("#downloadTime").html(timestampToDateTime(resultData.download_time));
+                            }else{
+                                $("#downloadTime").html("无");
+                            }
+                        }else{
+                            $(".card-detail-row .spinner-border").removeClass("spinner-border spinner-border-sm")
+                            console.log("加载失败");
+                        }
+                    });
+
+                },500);
+            }
+
+            function runEvent(){
+                $("#header").load("../header.html");
+                showContent(bookDetailData);
+                showDetailContent(bookDetailData.id);
+                $("body").fadeIn(1000);
+                $("#footer").load("../footer.html");
+            };
+        });
+
+        const bookDetailData = {"archive_type_name":"认知科学","image":"1693380712834.jpg","author":"弗雷・卡尔","publish_house":"中信出版社","download_format":"epub","publish_month":"2020/06","content_intro":"<p>本书系统而全面地回顾了近几百年<a target='_blank' href='https://baike.baidu.com/item/技术/13014499?fromModule=lemma_inlink'>技术</a>进步的历史，以及它如何从根本上改变了社会成员之间的经济和政治权力分配。</p><p>本书作者将带领读者们遍览各个时代技术进步对人们工作形态的影响，揭示不同时代“打工人”的处境，并最终将目光转向未来，试图分析当前的AI革命将对我们的工作造成何种影响，以及我们该如何做出应对。作者力图说明，技术进步对收入造成何种影响，将决定人们对它的态度。 </p><p><a target='_blank' href='https://baike.baidu.com/item/工业革命/895?fromModule=lemma_inlink'>工业革命</a>是历史上的重大时刻，但当时几乎没有人意识到它的巨大后果。</p><p>正如本书所表明的那样，工业革命从长远来看创造了前所未有的财富和繁荣，但机械化的直接后果对大量人口来说是毁灭性的。中等收入岗位减少，工资停滞不前，劳动收入占比下降，利润激增，经济不平等加剧。</p><p>本书作者卡尔·贝内迪克特·弗雷证明，这些趋势大体上反映了我们现在这个始于计算机革命的自动化时代的趋势。正如工业革命最终为社会带来非同寻常的利益一样，人工智能系统也有潜力做到这一点。</p><p>《技术陷阱》表明，在眼下这场新的技术革命中，过去的教训可以帮助我们更有效地面对现在的状况。</p>","score":"4.5","upload_time":"2周前","name":"技术陷阱13","archive_type_id":"14","id":"13"};
+        const bookExtendData = [{"image":"1693380712834.jpg","file":"9756977974890496.html","author":"弗雷・卡尔","name":"技术陷阱","id":"1"},{"image":"1693380712834.jpg","file":"9756978100719616.html","author":"弗雷・卡尔","name":"技术陷阱13","id":"13"},{"image":"1693380712834.jpg","file":"9756978041999360.html","author":"弗雷・卡尔","name":"技术陷阱5","id":"5"},{"image":"1693380712834.jpg","file":"9756978125885440.html","author":"弗雷・卡尔","name":"技术陷阱17","id":"17"}];
+    </script>
+</body>
+</html>

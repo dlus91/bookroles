@@ -1,0 +1,7 @@
+2023-10-16 23:36:18.004 [main] INFO  com.bookroles.tool.dLog.GrokLogUtil - 该此io操作，遍历数据量为：15
+2023-10-16 23:36:45.392 [main] INFO  com.bookroles.tool.dLog.GrokLogUtil - 该此io操作，遍历数据量为：15
+2023-10-16 23:37:13.206 [main] INFO  com.bookroles.tool.dLog.GrokLogUtil - 该此io操作，遍历数据量为：3000
+2023-10-16 23:37:13.386 [main] INFO  com.bookroles.tool.dLog.GrokLogUtil - 该此io操作，遍历数据量为：6000
+2023-10-16 23:38:18.521 [main] INFO  com.bookroles.tool.dLog.GrokLogUtil - 该此io操作，遍历数据量为：3000
+2023-10-16 23:38:18.801 [main] INFO  com.bookroles.tool.dLog.GrokLogUtil - 该此io操作，遍历数据量为：6000
+2023-10-16 23:38:30.655 [main] INFO  com.bookroles.tool.dLog.GrokLogUtil - 该此io操作，遍历数据量为：15

@@ -1,0 +1,12 @@
+2023-10-13 11:23:57.608 [main] ERROR com.bookroles.exception.AssertUtil - 文件名不存在, fileName:bookroles_access.2023-10-10.txt
+2023-10-13 11:25:23.733 [main] ERROR com.bookroles.exception.AssertUtil - 文件名不存在, fileName:bookroles_access.2023-10-10.txt
+2023-10-13 11:25:33.758 [main] ERROR com.bookroles.exception.AssertUtil - 文件名不存在, fileName:bookroles_access.2023-10-ss.txt
+2023-10-13 11:26:56.653 [main] ERROR com.bookroles.exception.AssertUtil - 文件名不存在或校验不通过, fileName:bookroles_access.2023-10-ss.txt
+2023-10-13 11:27:23.451 [main] ERROR com.bookroles.exception.AssertUtil - 文件名不存在或校验不通过, fileName:bookroles_access.2023-10-15.txt
+2023-10-13 11:34:38.155 [main] ERROR com.bookroles.tool.dLog.GrokLogUtil - H:\programmer\Interviewspace\bookroles\bookroles-manager\log\client\bookroles_access.2023-10-10.txt (系统找不到指定的文件。)
+2023-10-13 11:47:07.575 [main] ERROR com.bookroles.tool.dLog.GrokLogUtil - H:\programmer\Interviewspace\bookroles\bookroles-manager\log\client\bookroles_access.2023-10-10.txt (系统找不到指定的文件。)
+2023-10-13 11:49:39.624 [main] ERROR com.bookroles.tool.dLog.GrokLogUtil - H:\programmer\Interviewspace\bookroles\bookroles-manager\log\client\bookroles_access.2023-10-10.txt (系统找不到指定的文件。)
+2023-10-13 11:53:20.408 [main] ERROR com.bookroles.tool.dLog.GrokLogUtil - H:\programmer\Interviewspace\bookroles\bookroles-manager\log\client\bookroles_access.2023-10-10.txt (系统找不到指定的文件。)
+2023-10-13 11:55:22.381 [main] ERROR com.bookroles.tool.dLog.GrokLogUtil - H:\programmer\Interviewspace\bookroles\bookroles-manager\log\client\bookroles_access.2023-10-10.txt (系统找不到指定的文件。)
+2023-10-13 11:56:11.229 [main] ERROR com.bookroles.tool.dLog.GrokLogUtil - H:\programmer\Interviewspace\bookroles\bookroles-manager\log\client\bookroles_access.2023-10-10.txt (系统找不到指定的文件。)
+2023-10-13 16:33:53.676 [main] ERROR com.bookroles.exception.AssertUtil - key的值为空或者不是数字类型 value:null

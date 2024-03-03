@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    ">
+
+
+    <!-- 引入配置文件 -->
+    <context:property-placeholder location="classpath:properties/config.properties" />
+
+    <!-- 配置数据源 -->
+    <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="initialSize" value="${jdbc.initialSize}" />
+        <property name="minIdle" value="${jdbc.minIdle}" />
+        <property name="maxActive" value="${jdbc.maxActive}" />
+        <property name="maxWait" value="${jdbc.maxWait}" />
+        <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}"/>
+        <property name="filters" value="${jdbc.filters}" />
+        <property name="poolPreparedStatements" value="${jdbc.poolPreparedStatements}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="${jdbc.maxPoolPreparedStatementPerConnectionSize}" />
+        <property name="maxOpenPreparedStatements" value="${jdbc.maxOpenPreparedStatements}" />
+    </bean>
+
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="mybatisSessionBean">
+        <property name="typeAliasesPackage" value="com.bookroles.model" />
+        <property name="dataSource" ref="druidDataSource" />
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
+        <property name="configLocation" value="classpath:mybatis/mybatis.xml" />
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.bookroles.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="mybatisSessionBean" />
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="druidDataSource" />
+    </bean>
+
+    <tx:advice transaction-manager="transactionManager" id="mybatisTransaction">
+        <tx:attributes>
+            <tx:method name="save*" rollback-for="Exception"/>
+            <tx:method name="delete*" rollback-for="Exception"/>
+            <tx:method name="update*" rollback-for="Exception"/>
+            <tx:method name="add*" rollback-for="Exception"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut id="transactionPoint" expression="execution(* com.bookroles.service.*.*(..))"/>
+        <aop:advisor advice-ref="mybatisTransaction" pointcut-ref="transactionPoint"/>
+    </aop:config>
+
+    <!-- 注解方式配置事物 -->
+    <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
+
+</beans>

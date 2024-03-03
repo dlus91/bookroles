@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bookroles.mapper.LogMapper">
+
+    <!-- book表 -->
+    <sql id="pageLogQueryColumn">
+        day,log_name,total_count,
+        get_count,put_count,post_count,delete_count,
+        success_count,found_count,fail_count,error_count,
+        done,done_count,ip_count,use_time,create_time,update_time
+    </sql>
+
+    <sql id="conditionSql">
+        <if test="day != null and day !=''">
+            <trim prefix="and">
+                <bind name="day" value="'%' + day + '%'"/>
+                day like '${day}'
+            </trim>
+        </if>
+        <if test="logName != null and logName != ''">
+            <trim prefix="and">
+                <bind name="logName" value="'%' + logName + '%'"/>
+                log_name like '${logName}'
+            </trim>
+        </if>
+        <if test="totalCount > 0">
+            <trim prefix="and">
+                <![CDATA[ total_count >= #{totalCount} ]]>
+            </trim>
+        </if>
+        <if test="getCount > 0">
+            <trim prefix="and">
+                <![CDATA[ get_count >= #{getCount} ]]>
+            </trim>
+        </if>
+        <if test="putCount > 0">
+            <trim prefix="and">
+                <![CDATA[ put_count >= #{putCount} ]]>
+            </trim>
+        </if>
+        <if test="postCount > 0">
+            <trim prefix="and">
+                <![CDATA[ post_count >= #{postCount} ]]>
+            </trim>
+        </if>
+        <if test="deleteCount > 0">
+            <trim prefix="and">
+                <![CDATA[ delete_count >= #{deleteCount} ]]>
+            </trim>
+        </if>
+        <if test="successCount > 0">
+            <trim prefix="and">
+                <![CDATA[ success_count >= #{successCount} ]]>
+            </trim>
+        </if>
+        <if test="foundCount > 0">
+            <trim prefix="and">
+                <![CDATA[ found_count >= #{foundCount} ]]>
+            </trim>
+        </if>
+        <if test="failCount > 0">
+            <trim prefix="and">
+                <![CDATA[ fail_count >= #{failCount} ]]>
+            </trim>
+        </if>
+        <if test="errorCount > 0">
+            <trim prefix="and">
+                <![CDATA[ error_count >= #{errorCount} ]]>
+            </trim>
+        </if>
+        <if test="done &lt; 2">
+            <trim prefix="and">
+                <![CDATA[ done = #{done} ]]>
+            </trim>
+        </if>
+        <if test="doneCount > 0">
+            <trim prefix="and">
+                <![CDATA[ done_count = #{doneCount} ]]>
+            </trim>
+        </if>
+        <if test="ipCount > 0">
+            <trim prefix="and">
+                <![CDATA[ ip_count = #{ipCount} ]]>
+            </trim>
+        </if>
+        <if test="useCount > 0">
+            <trim prefix="and">
+                <![CDATA[ use_count = #{useCount} ]]>
+            </trim>
+        </if>
+        <if test="beginCreateTime > 0">
+            <trim prefix="and">
+                <![CDATA[ create_time >= #{beginCreateTime} ]]>
+            </trim>
+        </if>
+        <if test="endCreateTime &lt; 0">
+            <trim prefix="and">
+                <![CDATA[ create_time <= #{endCreateTime} ]]>
+            </trim>
+        </if>
+        <if test="beginUpdateTime > 0">
+            <trim prefix="and">
+                <![CDATA[ update_time >= #{beginUpdateTime} ]]>
+            </trim>
+        </if>
+        <if test="endUpdateTime &lt; 0">
+            <trim prefix="and">
+                <![CDATA[ update_time <= #{endUpdateTime} ]]>
+            </trim>
+        </if>
+    </sql>
+
+    <select id="queryPageLog" parameterType="com.bookroles.service.model.LogTotal" resultType="com.bookroles.service.model.LogTotal">
+        select <include refid="pageLogQueryColumn"/> from fast_day_log_total
+        where 1=1
+        <include refid="conditionSql"/>
+    </select>
+
+    <sql id="saveDayLogColumn">
+        #{day},#{logName},#{totalCount},#{getCount},#{putCount},,#{postCount},#{deleteCount}
+        ,#{successCount},#{foundCount},#{failCount},#{errorCount},#{done},#{doneCount},#{ipCount},#{useTime},#{createTime}
+    </sql>
+
+    <insert id="saveLog" parameterType="com.bookroles.service.model.LogTotal">
+        insert into fast_day_log_total values(<include refid="saveDayLogColumn"/>)
+    </insert>
+
+    <insert id="saveLogs" parameterType="com.bookroles.service.model.LogTotal">
+        insert into fast_day_log_total values
+            <foreach collection="list" item="item" separator=",">
+                (<include refid="saveDayLogColumn"/>)
+            </foreach>
+    </insert>
+
+    <update id="updateLog" parameterType="com.bookroles.service.model.LogTotal">
+        update fast_day_log_total set done = #{done} where 1=1 <include refid="conditionSql"/>
+    </update>
+
+    <delete id="deleteLog">
+        delete from fast_day_log_total where day = #{day} and log_name = #{logName}
+    </delete>
+
+
+</mapper>
