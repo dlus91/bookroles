@@ -38,16 +38,18 @@ public class MemoryApiTest {
         return count;
     }
 
+    public int incrementAndGet(){
+        increment();
+        return getCount();
+    }
+
 
 
     @Test
     public void test1(){
         MemoryApiTest memoryApiTest = new MemoryApiTest();
-        int i = memoryApiTest.getCount();
-        System.out.println(memoryApiTest.getCount());
         while (memoryApiTest.getCount() < 10) {
-            memoryApiTest.increment();
-            System.out.println(memoryApiTest.getCount());
+            System.out.println(memoryApiTest.incrementAndGet());
         }
 
     }
